@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Unidad 2 - Formulario de Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card shadow-sm border-dark">
+                    <div class="card-header bg-secondary text-white border-dark">
+                        <h4 class="mb-0">Formulario de Registro</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="registroForm">
+                            <!-- Primera fila-->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="nombre" class="form-label">Nombre Completo</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre completo">
+                                    <div class="invalid-feedback">El nombre completo es requerido.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="rut" class="form-label">Rut</label>
+                                    <input type="text" class="form-control" id="rut" placeholder="Nombre completo (Ej: 12345678-9)">
+                                    <div class="invalid-feedback">Debe ingresar un RUT chileno válido.</div>
+                                </div>
+                            </div>
+
+                            <!-- segunda -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="cv" class="form-label">Curriculum Vitae</label>
+                                    <input type="file" class="form-control" id="cv" accept=".pdf, .docx">
+                                    <div class="invalid-feedback">Solo se permiten archivos en formato .pdf o .docx.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                                    <input type="text" class="form-control" id="fechaNacimiento" placeholder="dd/MM/yyyy">
+                                    <div class="invalid-feedback">Formato de fecha inválido. Utilice dd/MM/yyyy.</div>
+                                </div>
+                            </div>
+
+                            <!--tercera-->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Correo electrónico">
+                                    <div class="invalid-feedback">Ingrese un email válido (ej: usuario@servidor.algo).</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="genero" class="form-label">Género</label>
+                                    <select class="form-select" id="genero">
+                                        <option value="" selected>Seleccione...</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="femenino">Femenino</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Ultima-->
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label for="password" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="password" placeholder="********">
+                                    <div class="invalid-feedback">Debe tener 8-12 caracteres, 1 mayúscula, 1 minúscula, 1 número y 1 carácter especial.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="repetirPassword" class="form-label">Repetir Contraseña</label>
+                                    <input type="password" class="form-control" id="repetirPassword" placeholder="********">
+                                    <div class="invalid-feedback">Las contraseñas deben ser exactamente iguales.</div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-end gap-2 border-top pt-3">
+                                <button type="button" class="btn btn-outline-secondary" onclick="limpiarFormulario()">Cancelar</button>
+                                <button type="button" class="btn btn-outline-dark" onclick="enviarFormulario()">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="funciones.js"></script>
+</body>
+</html>
